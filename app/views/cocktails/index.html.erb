@@ -1,0 +1,13 @@
+<h1>Tous les cocktails :</h1>
+<ul>
+  <% @cocktails.each do |cocktail| %>
+  <li><%= link_to cocktail.name, cocktail_path(cocktail)%> </li>
+    <%= link_to "Supprimer un cocktail", cocktail_path(cocktail.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    <% end %>
+</ul>
+
+<%= link_to new_cocktail_path, { :class => "btn btn-outline-warning"} do %>
+<i class="fas fa-cocktail"> Créer ton Cocktail !</i>
+<% end %>
