@@ -1,6 +1,17 @@
-<h1>Tous les cocktails :</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/images/banner_cocktails.jpg');">
+  <div class="banner-content">
+    <h1>Mister Cocktail</h1>
+    <p>Create your own Cocktail</p>
+    <%= link_to new_cocktail_path, { :class => "btn btn-warning"} do %>
+<i class="fas fa-cocktail"> Create your Cocktail!</i>
+<% end %>
+  </div>
+</div>
+
+<h1>Cocktails:</h1>
 <ul>
   <% @cocktails.each do |cocktail| %>
+  <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
   <li><%= link_to cocktail.name, cocktail_path(cocktail)%> </li>
     <%= link_to "Supprimer un cocktail", cocktail_path(cocktail.id),
       method: :delete,
@@ -8,6 +19,4 @@
     <% end %>
 </ul>
 
-<%= link_to new_cocktail_path, { :class => "btn btn-outline-warning"} do %>
-<i class="fas fa-cocktail"> Créer ton Cocktail !</i>
-<% end %>
+
