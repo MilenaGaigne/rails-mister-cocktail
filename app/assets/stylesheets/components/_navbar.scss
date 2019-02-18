@@ -1,10 +1,26 @@
 .navbar-header {
-  display: flex;
-  justify-content: space-between;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+ }
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
 }
 
+.brand_logo {
+  font-size  : 40px;
+  font-color : red;
+}
 
-
+.flex_box {
+  display :flex;
+  justify-content: space-around;
+  align-items: center;
+}
+// .dropdown_logo
 
 
 
